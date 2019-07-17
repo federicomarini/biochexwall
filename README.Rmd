@@ -1,0 +1,309 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = FALSE
+)
+```
+
+# biochexwall
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Grabbing all the stickers in Bioc - png format
+
+https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/README.md
+
+This one does in a by hand way...
+
+```{r}
+getBiocSticker <- function(myurl) {
+  mypkg <- basename(myurl)
+  download.file(myurl, file.path("BiocStickers",mypkg))
+}
+
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/affy/affy.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/AnnotationDbi/AnnotationDbi.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/AnnotationFilter/AnnotationFilter_hl.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/apeglm/apeglm.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/BASiCS/BASiCS.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/beadarray/beadarray.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/Biobase/Biobase.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/BiocFileCache/BiocFileCache.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/Bioconductor/Bioconductor_original.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/BiocPkgTools/BiocPkgTools.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/BiocStyle/BiocStyle.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/biomaRt/biomaRt.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/Biostrings/Biostrings.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/bsseq/bsseq.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/CATALYST/CATALYST.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/CellBench/CellBench.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/ChIPseeker/ChIPseeker.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/cleaver/cleaver.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/clusterProfiler/clusterProfiler.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/consensus/consensus.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/countsimQC/countsimQC.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/DEGreport/degreport.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/DESeq2/DESeq2.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/DEXSeq/DEXSeq.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/diffcyt/diffcyt.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/dmrseq/dmrseq.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/drawProteins/drawProteins.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/DRIMSeq/DRIMSeq.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/DropletUtils/DropletUtils.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/edgeR/edgeR.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/EGSEA/EGSEA.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/ensembldb/ensembldb.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/ExperimentHub/ExperimentHub.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/FamAgg/FamAgg_hl.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/fishpond/fishpond.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/GenomicRanges/GenomicRanges.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/GenomicScores/GenomicScores.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/genomation/genomation.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/GEOquery/GEOquery.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/ggtree/ggtree.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/Glimma/Glimma.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/GOexpress/GOexpress.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/GSVA/GSVA.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/Gviz/Gviz.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/HPAanalyze/HPAanalyze.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/iCOBRA/iCOBRA.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/IHW/IHW.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/illuminaio/illuminaio.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/iSEE/iSEE.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/isomiRs/isomirs.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/IRanges/IRanges.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/limma/limma.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/methylKit/methylKit.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/minfi/minfi.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/missMethyl/missMethyl.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/Modstrings/Modstrings.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/MSnbase/MSnbase.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/mzR/mzR_hl.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/plyranges/plyranges.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/pRoloc/pRoloc.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/pRoloc/pRolocdata.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/pRoloc/pRolocGUI.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/RCAS/RCAS.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/RCy3/RCy3_sticker.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/regsplice/regsplice.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/rhdf5/rhdf5.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/Rsamtools/Rsamtools.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/Rsubread/Rsubread.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/RUV/RUV.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/RUVcorr/RUVcorr.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/RUVnormalize/RUVnormalize.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/RUVSeq/RUVSeq.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/SC3/SC3.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/scDD/scDD.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/scater/scater.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/scmap/scmap.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/scPipe/scPipe.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/scran/scran.png")    
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/SingleCellExperiment/SingleCellExperiment.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/singscore/singscore.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/slingshot/slingshot.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/Splatter/splatter_monochrome.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/stageR/stageR.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/Structstrings/Structstrings.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/SummarizedExperiment/SummarizedExperiment")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/sva/sva.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/systemPipeR/systemPipeR.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/treeio/treeio.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/tRNA/tRNA.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/tximeta/tximeta.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/tximport/tximport.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/TVTB/TVTB.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/VariantAnnotation/VariantAnnotation.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/vulcan/vulcan.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/xcms/xcms_hl.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/zinbwave/zinbwave.png")
+
+## Stickers for *events*
+
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/CSAMA/2017/CSAMA2017.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/EuroBioc2017/EuroBioc2017.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/CSAMA/2018/CSAMA2018.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/Bioc2018/Bioc2018.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/BioCAsia/BioCAsia.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/BiocAsia2015/biocasia2015.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/BiocAsia2016/biocasia2016.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/BiocAsia2017/biocasia2017.png")
+getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/BiocAsia2018/biocasia2018.png")
+
+```
+
+... ideally this could/should be replaced by a script that scrapes all the links in the README.md file of the BiocStickers repo
+
+Then, following Mitch's awesome writeup:
+
+```{r}
+library(magick)
+library(purrr)
+
+path <- "BiocStickers"
+
+sticker_files <- list.files(path)
+stickers <- file.path(path, sticker_files) %>% 
+  map(function(path){
+    switch(tools::file_ext(path),
+           svg = image_read_svg(path),
+           pdf = image_read_pdf(path),
+           image_read(path))
+  }) %>%
+  map(image_transparent, "white") %>%
+  map(image_trim) %>%
+  set_names(sticker_files)
+
+
+sticker_width <- 121
+
+# Scale all stickers to the desired pixel width
+stickers <- stickers %>%
+  map(image_scale, sticker_width)
+  
+# Identify low resolution stickers
+stickers %>%
+    map_lgl(~ with(image_info(.x),
+                   width < (sticker_width-1)/2 && format != "svg")
+    )
+
+# Identify incorrect shapes / proportions (tolerance of +-2 height)
+stickers %>%
+    map_lgl(~ with(image_info(.x),
+                   height < (median(height)-2) | height > (median(height) + 2))
+    )
+
+# Extract correct sticker height (this could also be calculated directly from width)
+sticker_height <- stickers %>%
+  map(image_info) %>%
+  map_dbl("height") %>%
+  median
+
+# Coerce sticker dimensions
+stickers <- stickers %>%
+  map(image_resize, paste0(sticker_width, "x", sticker_height, "!"))
+
+stickers[["iSEE.png"]]
+
+
+sticker_row_size <- 9
+# Calculate row sizes
+sticker_col_size <- ceiling(length(stickers)/(sticker_row_size-0.5))
+row_lens <- rep(c(sticker_row_size,sticker_row_size-1), length.out=sticker_col_size)
+row_lens[length(row_lens)] <- row_lens[length(row_lens)]  - (length(stickers) - sum(row_lens))
+
+sticker_rows <- map2(row_lens, cumsum(row_lens),
+                     ~ seq(.y-.x+1, by = 1, length.out = .x)) %>%
+  map(~ stickers[.x] %>%
+        invoke(c, .) %>%
+        image_append)
+
+sticker_rows[[1]]
+
+
+# Add stickers to canvas
+canvas <- image_blank(sticker_row_size*sticker_width, 
+                      sticker_height + (sticker_col_size-1)*sticker_height/1.33526,
+                      "white")
+
+reduce2(sticker_rows, seq_along(sticker_rows), 
+        ~ image_composite(
+          ..1, ..2,
+          offset = paste0("+", ((..3-1)%%2)*sticker_width/2,
+                          "+", round((..3-1)*sticker_height/1.33526))
+        ),
+        .init = canvas)
+```
+
+with Australia as a canvas
+
+```{r}
+library(tidyverse)
+library(raster)
+library(sf)
+aus <- getData("GADM", country = "AUS", level = 0) %>%
+  disaggregate() %>%
+  geometry()
+
+ggplot() + 
+  geom_sf(data = st_as_sf(aus))
+
+hex_points <- aus %>%
+  spsample(type = "hexagonal", cellsize = 2)
+
+as_tibble(hex_points@coords)
+
+aus_hex <- HexPoints2SpatialPolygons(hex_points, dx = 2)
+
+ggplot() + 
+  geom_sf(data = st_as_sf(aus)) + 
+  geom_sf(data = st_as_sf(aus_hex), colour = "blue", fill = NA)
+```
+
+We would step in here
+
+```{r}
+source("https://raw.githubusercontent.com/mitchelloharawild/hexwall/master/hexwall.R")
+
+hexwall(
+  "BiocStickers",
+  sticker_width = 500,
+  coords = hex_points@coords,
+  sort_mode = "colour"
+)
+
+```
+
+and here we'd use the "Default positioning"
+
+```{r}
+hexwall(
+  "BiocStickers",
+  sticker_width = 500,
+  sort_mode = "colour"
+)
+
+```
+
+
+Doing the same but on the Bioc note
+
+- take the vectorized image? :white_check:
+- "cut out the note"? :white_check:
+- note-to-edges :white_check:
+- provide these coordinates after hexagonal `spsample`
+
+```{r}
+library(magick)
+bioc_img <- image_read("bioconductor_logo_note.png")
+bioc_img_edges <- image_edge(bioc_img)  
+### and of course I should meaningfully go on from here :)
+
+
+
+
+
+
+
+
+# to get to...
+hexwall(
+  "BiocStickers",
+  sticker_width = 500,
+  coords = hex_points_biocnote@coords,
+  sort_mode = "colour"
+)
+
+```
+
+
+
+
