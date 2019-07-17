@@ -1,37 +1,31 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  eval = FALSE
-)
-```
-
 # biochexwall
 
-The idea of this repo is to create a hexwall-like representation of all stickers related to the Bioconductor project.
+The idea of this repo is to create a hexwall-like representation of all
+stickers related to the Bioconductor project.
 
-Credits go to the beautiful writeup and code written by Mitch O'hara Wild, upon which I built up the following.
+Credits go to the beautiful writeup and code written by Mitch O’hara
+Wild, upon which I built up the following.
 
-The whole point is: why not shaping the stickers in the form of the Bioconductor note?
+The whole point is: why not shaping the stickers in the form of the
+Bioconductor note?
 
 ## The steps
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-Grabbing all the stickers in Bioc - png format
+Grabbing all the stickers in Bioc - png
+format
 
-https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/README.md
+<https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/README.md>
 
-This one does in a by hand way...
+This one does in a by hand way…
 
-```{r}
+``` r
 dir.create("BiocStickers")
 
 getBiocSticker <- function(myurl) {
@@ -147,14 +141,14 @@ getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/mast
 getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/BiocAsia2016/biocasia2016.png")
 getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/BiocAsia2017/biocasia2017.png")
 getBiocSticker("https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/BiocAsia2018/biocasia2018.png")
-
 ```
 
-... ideally this could/should be replaced by a script that scrapes all the links in the README.md file of the BiocStickers repo
+… ideally this could/should be replaced by a script that scrapes all the
+links in the README.md file of the BiocStickers repo
 
-Then, following Mitch's awesome writeup:
+Then, following Mitch’s awesome writeup:
 
-```{r}
+``` r
 library(magick)
 library(purrr)
 
@@ -235,7 +229,7 @@ reduce2(sticker_rows, seq_along(sticker_rows),
 
 with Australia as a canvas
 
-```{r}
+``` r
 library(tidyverse)
 library(raster)
 library(sf)
@@ -258,9 +252,10 @@ ggplot() +
   geom_sf(data = st_as_sf(aus_hex), colour = "blue", fill = NA)
 ```
 
-We would step in here
+We would step in
+here
 
-```{r}
+``` r
 source("https://raw.githubusercontent.com/mitchelloharawild/hexwall/master/hexwall.R")
 
 hexwall(
@@ -269,29 +264,28 @@ hexwall(
   coords = hex_points@coords,
   sort_mode = "colour"
 )
-
 ```
 
-and here we'd use the "Default positioning"
+and here we’d use the “Default positioning”
 
-```{r}
+``` r
 hexwall(
   "BiocStickers",
   sticker_width = 500,
   sort_mode = "colour"
 )
-
 ```
-
 
 Doing the same but on the Bioc note
 
-- take the vectorized image? :white_check:
-- "cut out the note"? :white_check:
-- note-to-edges :white_check:
-- provide these coordinates after hexagonal `spsample`
+  - take the vectorized image? :white\_check:
+  - “cut out the note”? :white\_check:
+  - note-to-edges :white\_check:
+  - provide these coordinates after hexagonal `spsample`
 
-```{r}
+<!-- end list -->
+
+``` r
 library(magick)
 bioc_img <- image_read("bioconductor_logo_note.png")
 bioc_img_edges <- image_edge(bioc_img)  
@@ -311,9 +305,4 @@ hexwall(
   coords = hex_points_biocnote@coords,
   sort_mode = "colour"
 )
-
 ```
-
-
-
-
