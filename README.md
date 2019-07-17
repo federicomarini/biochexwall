@@ -283,7 +283,9 @@ Doing the same but on the Bioc note
   - note-to-edges :white\_check:
   - provide these coordinates after hexagonal `spsample`
 
-<!-- end list -->
+The png file for the bioc note has been created by removing the
+unnecessary letters with Inkscape, and exporting the vectorial image to
+the png format.
 
 ``` r
 library(magick)

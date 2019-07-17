@@ -291,6 +291,8 @@ Doing the same but on the Bioc note
 - note-to-edges :white_check:
 - provide these coordinates after hexagonal `spsample`
 
+The png file for the bioc note has been created by removing the unnecessary letters with Inkscape, and exporting the vectorial image to the png format.
+
 ```{r}
 library(magick)
 bioc_img <- image_read("bioconductor_logo_note.png")
