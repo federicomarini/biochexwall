@@ -299,9 +299,19 @@ bioc_img <- image_read("bioconductor_logo_note.png")
 bioc_img_edges <- image_edge(bioc_img)  
 ### and of course I should meaningfully go on from here :)
 
+library(EBImage)
+myimg <- EBImage::readImage("bioconductor_logo_note.png")
+# select out the note only
+myimg_cut <- myimg[1:300, 200:1222,]
+writeImage(myimg_cut,"bioc_note_only.png")
+myimg_bin <- myimg_cut > 0
+colorMode(myimg_bin) <- "Grayscale"
+writeImage(myimg_bin,"bioc_note_binarized.png")
 
-
-
+library(stars)
+st_bioc <- read_stars("bioc_note_binarized.png")
+st_contour <- st_contour(st_bioc)
+# HMMMM 
 
 
 
